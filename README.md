@@ -1,6 +1,6 @@
 # VenderSpender
 
-
+This program was made for my 3rd week of C# to illistrate my understanding of the curriculum.
 
 #### By Erin Deuel on 10/11/2019
 

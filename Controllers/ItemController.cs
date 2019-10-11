@@ -9,28 +9,24 @@ namespace VendorOrder.Controllers
         [HttpGet("/orders")]
         public ActionResult Index()
         {
-
+            List<Order> allOrders = Order.GetAll();
+            return View(allOrders);
         }
 
-        [HttpGet("/orders/new_vender")]
-        public ActionResult Index()
-        {
-            return View();
-        }
-        [HttpGet("/orders/new_order")]
-        public ActionResult Index()
+        [HttpGet("/orders/new")]
+        public ActionResult New()
         {
             return View();
         }
 
         [HttpPost("/orders")]
-        public ActionResult Index()
+        public ActionResult Create(string VendorDesription)
         {
-
+            Vendor SelectedVendor = new Vendor(VendorDesription);
         }
 
         [HttpGet("/places/{id}")]
-        public ActionResult Index()
+        public ActionResult Show()
         {
 
         }
