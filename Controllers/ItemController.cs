@@ -20,15 +20,17 @@ namespace VendorOrder.Controllers
         }
 
         [HttpPost("/orders")]
-        public ActionResult Create(string VendorDesription)
+        public ActionResult Create(string description)
         {
-            Vendor SelectedVendor = new Vendor(VendorDesription);
+            Vendor SelectedVendor = new Vendor(description);
+            return RedirectToAction("Index");
         }
 
         [HttpGet("/places/{id}")]
-        public ActionResult Show()
+        public ActionResult Show(int id)
         {
-
+            Order FoundOrder = Order.Find(id);
+            return View(FoundOrder);
         }
     }
 }
