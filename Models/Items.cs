@@ -3,15 +3,15 @@ using System.Collections.Generic;
 namespace VendorOrder.Models
 {
     public class Order{
-        public string OrderedGoods {get; set;}
-        public int Quantity {get; set;}
-        public string Description {get; set;}
+        public string Ordered {get; set;}
+        public int Amount {get; set;}
         public int Id {get;}
         private static List<Order> _Orders = new List<Order>();
 
-        public Order(string description)
+        public Order(string ordered, int amount)
         { 
-            Description = description;
+            Ordered = Ordered;
+            Amount = amount;
             _Orders.Add(this);
             Id = _Orders.Count;
         }
