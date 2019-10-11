@@ -8,16 +8,14 @@ namespace VendorOrder.Models
     public string Name { get; set; }
     public string VendorDescription {get; set;}
     public int Id { get; }
-    private List<Order> _venderOrders { get; set; }
-    public Vendor(string name, string vendorDescription)
+    public Vendor(string name)
     {
       Name = name;
-      VendorDescription = vendorDescription;
 
     }
     public static List<Vendor> GetAll()
         {
-            return _venderOrders;
+            return _instances;
         }
   }
 }
