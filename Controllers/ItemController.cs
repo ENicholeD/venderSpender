@@ -26,7 +26,14 @@ namespace VendorOrder.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet("/places/{id}")]
+        [HttpPost("/orders/delete")]
+        public ActionResult DeleteAll()
+        {
+            Order.ClearAll();
+            return View();
+        }
+
+        [HttpGet("/orders/{id}")]
         public ActionResult Show(int id)
         {
             Order FoundOrder = Order.Find(id);
