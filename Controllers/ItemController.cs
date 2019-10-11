@@ -12,7 +12,12 @@ namespace VendorOrder.Controllers
 
         }
 
-        [HttpGet("/orders/new")]
+        [HttpGet("/orders/new_vender")]
+        public ActionResult Index()
+        {
+            return View();
+        }
+        [HttpGet("/orders/new_order")]
         public ActionResult Index()
         {
             return View();
@@ -23,7 +28,7 @@ namespace VendorOrder.Controllers
         {
 
         }
-        
+
         [HttpGet("/places/{id}")]
         public ActionResult Index()
         {

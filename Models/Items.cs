@@ -16,5 +16,15 @@ namespace VendorOrder.Models
             OrderedGoods = orderedGoods;
             _Orders.Add(this);
         }
+
+        public static List<Order> GetAll()
+        {
+            return _Orders;
+        }
+
+        public static Order Find(int idSearch)
+        {
+            return _orders[idSearch-1];
+        }
     }
 }
