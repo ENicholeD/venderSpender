@@ -17,8 +17,6 @@ namespace VendorOrder.Models
         public class Order{
             public string OrderedGoods {get; set;}
             public int OrderId {get;}
-
-            public
             private static List<Order> _Orders = new List<Order>();
 
             public Order(string orderedGoods)
