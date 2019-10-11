@@ -2,29 +2,38 @@ using System.Collections.Generic;
 
 namespace VendorOrder.Models
 {
-    public class Order{
+    public class Vendor
+    {
         public string VendorName {get; set;}
         public string VenderDescription {get; set;}
-        public string OrderedGoods {get; set;}
-        public int Id {get;}
 
-        private static List<Order> _Orders = new List<Order>();
-
-        public Order(string vendorName, string orderedGoods)
+        public VendorOrder(string vendorName, string venderDescription)
         {
             VendorName = vendorName;
-            OrderedGoods = orderedGoods;
-            _Orders.Add(this);
+            VenderDescription = venderDescription;
         }
+        public class Order{
+            public string OrderedGoods {get; set;}
+            public int Id {get;}
 
-        public static List<Order> GetAll()
-        {
-            return _Orders;
-        }
+            public
+            private static List<Order> _Orders = new List<Order>();
 
-        public static Order Find(int idSearch)
-        {
-            return _orders[idSearch-1];
+            public Order(string orderedGoods)
+            {
+                OrderedGoods = orderedGoods;
+                _Orders.Add(this);
+            }
+
+            public static List<Order> GetAll()
+            {
+                return _Orders;
+            }
+
+            public static Order Find(int idSearch)
+            {
+                return _orders[idSearch-1];
+            }
         }
     }
 }
