@@ -1,7 +1,14 @@
 @using VendorOrder.Models;
 
 <h1>Vendor Spender</h1>
-@foreach (order in Order)
+@if (Model.Length == 0)
 {
-    
+    <p>There are no items in the list.</p>
 }
+
+<ul>
+    @foreach(Order order in Model)
+    {
+        <li><a href='/orders/@order.Id'>@Order.Description</a></li>
+    }
+</ul>

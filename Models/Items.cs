@@ -5,23 +5,28 @@ namespace VendorOrder.Models
     public class Order{
         public string OrderedGoods {get; set;}
         public int Quantity {get; set;}
-        public int OrderId {get;}
+        public string Description {get; set;}
+        public int Id {get;}
         private static List<Order> _Orders = new List<Order>();
 
-        public Order(string orderedGoods)
+        public Order(string description)
         { 
-            OrderedGoods = orderedGoods;
+            Description = description;
             _Orders.Add(this);
+            Id = _Orders.Count;
         }
 
         public static List<Order> GetAll()
         {
             return _Orders;
         }
-
-        public static Order Find(int idSearch)
+         public static void ClearAll()
         {
-            return _Orders[idSearch-1];
+            _Orders.Clear();
+        }
+        public static Order Find(int searchID)
+        {
+            return _Orders[searchID-1];
         }
     }
 }
